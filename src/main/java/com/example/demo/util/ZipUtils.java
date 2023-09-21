@@ -49,7 +49,7 @@ public class ZipUtils {
                         String relativePath = getRelativePath(baseDir, file);
                         if (CollectionUtils.isEmpty(subDirs) || isSubDirMatched(relativePath, subDirs, true)) {
                             log.debug("Add directory {}", relativePath);
-                            ZipEntry ze = new ZipEntry(relativePath + File.separator);
+                            ZipEntry ze = new ZipEntry(relativePath + "/");
                             ze.setTime(file.lastModified());
                             zos.putNextEntry(ze);
                             zos.closeEntry();
